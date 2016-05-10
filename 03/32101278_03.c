@@ -16,8 +16,7 @@ int main(int argc, char **argv) {
 double calc_exp(int n) {
   double e = 1.0;
   while (n > 1) {
-    e /= n;
-    e += 1;
+    e = e / n + 1;
     n--;
   }
   e += 1;
