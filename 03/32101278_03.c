@@ -15,10 +15,9 @@ int main(int argc, char **argv) {
 // eの近似値をn次の項まで計算する
 double calc_exp(int n) {
   double e = 1.0;
-  while (n > 1) {
+  while (n > 0) {
     e = e / n + 1;
     n--;
   }
-  e += 1;
   return e;
 }
