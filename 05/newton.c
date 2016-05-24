@@ -6,12 +6,17 @@ double df(double x);
 #define EPSILON (4.0E-16)
 
 int main(int argc, char **argv) {
+  // 標準入力から平方根を求めたい正の実数を受け取る
   double a;
   scanf("%lf", &a);
 
+  if (a < 0) {
+    fprintf(stderr, "Input must be positive!\n");
+    return -1;
+  }
+
   double x = a;
-  double x_new;
-  x_new = x + f(x, a) / df(x);
+  double x_new = x + f(x, a) / df(x);
   while (fabs(x_new - x) > EPSILON * fabs(x)) {
     x = x_new;
     x_new = x - f(x, a) / df(x);
